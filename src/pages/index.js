@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect }  from 'react';
 
 import AttributeGrid from '../components/AttributeGrid';
 import Container from '../components/Container';
@@ -19,6 +19,21 @@ import { Link, navigate } from 'gatsby';
 const IndexPage = () => {
   const newArrivals = generateMockProductData(3, 'shirt');
   const blogData = generateMockBlogData(3);
+  useEffect(() => {
+    // Dynamically create script element
+    const script = document.createElement('script');
+    script.src = 'https://fm-staging-us-app-cdnjs.s3.amazonaws.com/crm/7346235/6262923.js';
+    script.chat = true;
+
+    // Append the script to the document body
+    document.body.appendChild(script);
+
+    // Clean up function to remove the script when the component unmounts
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
 
   const goToShop = () => {
     navigate('/shop');
