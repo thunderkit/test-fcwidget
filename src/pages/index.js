@@ -28,6 +28,10 @@ const IndexPage = () => {
     // Append the script to the document body
     document.body.appendChild(script);
 
+    
+    // Append the script to the document body
+    document.body.appendChild(script);
+
     // Clean up function to remove the script when the component unmounts
     return () => {
       document.body.removeChild(script);
