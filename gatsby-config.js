@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Gatsby Sydney Ecommerce Theme`,
     siteUrl: `https://jamm.matter.design`,
+    crossOriginEmbedderPolicy: `credentialless`,
+    crossOriginOpenerPolicy: `same-origin`
   },
   plugins: [
     {
